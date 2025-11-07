@@ -30,7 +30,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ./backend-jenkins
-          file: ./backend-jenkins/Dockerfile
+          file: ./backend-jenkins/backend.Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/ansible-prac2-backend:latest
 
@@ -39,6 +39,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           context: ./frontend-jenkins
-          file: ./frontend-jenkins/Dockerfile
+          file: ./frontend-jenkins/frontend.Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/ansible-prac2-frontend:latest
