@@ -29,8 +29,8 @@ jobs:
       - name: Build and Push Backend Image
         uses: docker/build-push-action@v6
         with:
-          context: ./backend-springbootapp
-          file: ./backend-springbootapp/backend.Dockerfile
+          context: ./backend-jenkins
+          file: ./backend-jenkins/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/ansible-prac2-backend:latest
 
@@ -38,7 +38,7 @@ jobs:
       - name: Build and Push Frontend Image
         uses: docker/build-push-action@v6
         with:
-          context: ./frontend-reactapp
-          file: ./frontend-reactapp/frontend.Dockerfile
+          context: ./frontend-jenkins
+          file: ./frontend-jenkins/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/ansible-prac2-frontend:latest
